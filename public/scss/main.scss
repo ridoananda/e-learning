@@ -1,0 +1,374 @@
+// VARIABEL
+$primaryColor: #2F80ED;
+$textColor: #0055ffb4;
+
+// MIXIN
+@mixin btn-masuk {
+  border-radius: 2em;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColor;
+  color: white;
+  font-weight: 300;
+  padding: 0.3em 1.2em;
+  box-shadow: 1px 1px 2px rgba($color: $primaryColor, $alpha: 0.5);
+}
+@mixin btn-daftar {
+  border-radius: 8px;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColor;
+  color: white;
+}
+@mixin heading1 {
+  font-weight: 700;
+  color: $primaryColor;
+  font-size: 1.5em;
+  text-align: center;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  #home {
+    background-image: url('../img/bg-body.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50vmax;
+    .custom-navbar {
+      background-color: transparent;
+      a.navbar-brand {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+      .nav-item {
+        .nav-link {
+          font-weight: 600;
+          margin-right: 2.5em;
+          text-transform: capitalize;
+          font-size: 1.2em;
+          transition: color 0.3s ease;
+          @media screen and(max-width: 992px) {
+            text-align: start;
+            margin-right: 0;
+          }
+          &.btn-masuk {
+            @include btn-masuk();
+            &:hover {
+              background-color: transparent;
+              color: $textColor;
+              border-radius: 2em;
+              border: 1px solid $primaryColor;
+            }
+          }
+          &:hover {
+            border-radius: 2px;
+            color: black;
+          }
+          &.active {
+            color: black;
+          }
+        }
+      }
+
+    }
+
+    .custom-section {
+      h1 {
+        margin-top: 30vh;
+        font-weight: 700;
+        color: $primaryColor;
+        font-size: 2.5em;
+        white-space: nowrap;
+      }
+      p {
+        color: $textColor;
+        font-size: 1.1em;
+        margin-top: 0.8em;
+        margin-bottom: 1.5em;
+      }
+
+      .btn-daftar {
+        @include btn-daftar();
+        // &:hover {
+        // background-color: transparent;
+        // color: $primaryColor;
+        // }
+      }
+      .btn-masuk {
+        background-color: transparent;
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        border-radius: 8px;
+        // &:hover {
+        // @include btn-daftar();
+        // }
+      }
+
+      @media screen and(max-width: 992px) {
+        h1 {
+          margin-top: 55vh;
+          font-size: 1.5em;
+        }
+        p {
+          white-space: pre-line;
+          font-size: 0.95em;
+          color: $textColor;
+        }
+      }
+    }
+
+    section#fitur {
+      margin-top: 20vmax;
+      text-align: center;
+      background: url('../img/bg-fitur.png');
+      background-attachment: fixed;
+      width: 100%;
+      background-position: center;
+      h1 {
+        @include heading1();
+        white-space: pre-line;
+      }
+      h5 {
+        font-weight: bold;
+        color: $primaryColor;
+      }
+      p {
+        white-space: pre-line;
+        color: $textColor;
+      }
+      @media screen and(max-width: 992px) {
+        margin-top: 2em;
+      }
+    }
+
+    section#artikel {
+      h1 {
+        @include heading1();
+        font-size: 1.6em;
+      }
+
+      .card {
+        border-radius: 20px;
+        .card-img-top {
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+        .judul-artikel {
+          color: $primaryColor;
+          font-weight: 600;
+          font-size: 1.4em;
+        }
+        .isi-text {
+          line-height: 1.2em;
+          word-break: break-all;
+        }
+        .btn-baca-selengkapnya {
+          border-radius: 12px;
+          background-color: $primaryColor;
+          color: white;
+
+          &:hover {
+            background-color: transparent;
+            border: 1px solid $primaryColor;
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+
+    section#hubungi {
+      background: url('../img/bg-fitur.png');
+      background-attachment: fixed;
+      width: 100%;
+      background-position: top;
+
+      h1 {
+        @include heading1();
+      }
+
+      .form-hubungi {
+        label {
+          color: $primaryColor;
+          font-weight: 400;
+          font-size: 1.1em;
+        }
+        input,
+        textarea {
+          background-color: transparent;
+          border: 1px solid lighten($color: $primaryColor, $amount: 15);
+          border-radius: 10px;
+          color: $primaryColor;
+        }
+        button {
+          border: 1px solid $primaryColor;
+          border-radius: 0.7em;
+          color: $primaryColor;
+          &:hover {
+            background-color: $primaryColor;
+            color: white;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  #artikel {
+
+    .custom-navbar {
+      background-color: white;
+      a.navbar-brand {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+      .nav-item {
+        .nav-link {
+          font-weight: 600;
+          margin-right: 2.5em;
+          text-transform: capitalize;
+          font-size: 1.2em;
+          transition: color 0.3s ease;
+          @media screen and(max-width: 992px) {
+            text-align: start;
+            margin-right: 0;
+          }
+          &.btn-masuk {
+            @include btn-masuk();
+            &:hover {
+              background-color: transparent;
+              color: $textColor;
+              border-radius: 2em;
+              border: 1px solid $primaryColor;
+            }
+          }
+          &:hover {
+            border-radius: 2px;
+            color: black;
+          }
+          &.active {
+            color: black;
+          }
+        }
+      }
+
+    }
+
+    section#artikel {
+      h1 {
+        @include heading1();
+        font-size: 1.6em;
+        margin-top: 3.5em;
+        margin-bottom: 0.8em;
+      }
+
+      .cari-artikel {
+        input {
+          border: 1px solid $primaryColor;
+        }
+        button {
+          border: 1px solid $primaryColor;
+          color: $primaryColor;
+        }
+      }
+
+      .card {
+        border-radius: 20px;
+        .card-img-top {
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+        .judul-artikel {
+          color: $primaryColor;
+          font-weight: 600;
+          font-size: 1.4em;
+        }
+        .isi-text {
+          line-height: 1.2em;
+          word-break: break-all;
+        }
+        .btn-baca-selengkapnya {
+          border-radius: 12px;
+          background-color: $primaryColor;
+          color: white;
+
+          &:hover {
+            background-color: transparent;
+            border: 1px solid $primaryColor;
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+
+    section#detail-artikel {
+      h3 {
+        text-transform: capitalize;
+        font-size: 1.6em;
+        margin-top: 3.5em;
+      }
+
+      .thumbnail {
+        border-radius: 10px;
+        width: 100%;
+        max-height: 100%;
+      }
+
+      .text {
+        line-height: 20px;
+        color: lighten($color: #000000, $amount: 30);
+        font-size: 1.1em;
+
+        img {
+          max-width: 100% !important;
+          border-radius: 10px;
+        }
+      }
+
+      .info-komentar {
+        background-color: lighten($color: #000000, $amount: 88);
+        padding: 0.4em 0.6em 0.8em;
+        border-radius: 10px;
+        a.nama-lengkap {
+          font-weight: 600;
+          color: lighten($color: #000000, $amount: 20);
+          line-height: 0.8em;
+          font-size: 1.1em;
+        }
+        p {
+          line-height: 1.3em;
+          font-size: 1em;
+          margin-bottom: -0.1em;
+          white-space: pre-line;
+          color: lighten($color: #000000, $amount: 30);
+        }
+      }
+      .tanggal-komentar {
+        font-size: 0.8em;
+        color: lighten($color: #000000, $amount: 20);
+      }
+
+      .tambah-komentar {
+        textarea {
+          border-radius: 10px;
+        }
+
+        button {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+
+  section#footer {
+    background-color: $primaryColor;
+    padding: 1em;
+
+    footer {
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+}

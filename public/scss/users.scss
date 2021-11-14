@@ -1,0 +1,76 @@
+$primaryColor: #2F80ED;
+$textColor: #0055ffb4;
+
+// MIXIN
+@mixin btn-masuk {
+  border-radius: 2em;
+  background-color: $primaryColor;
+  border: 1px solid $primaryColor;
+  color: white;
+  font-weight: 300;
+  padding: 0.3em 1.2em;
+  box-shadow: 1px 1px 2px rgba($color: $primaryColor, $alpha: 0.5);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  .custom-navbar {
+    background-color: transparent;
+    a.navbar-brand {
+      font-size: 1.5rem;
+      text-transform: capitalize;
+    }
+    .nav-item {
+      .nav-link {
+        font-weight: 600;
+        margin-right: 2.5em;
+        text-transform: capitalize;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+        @media screen and(max-width: 992px) {
+          text-align: start;
+          margin-right: 0;
+        }
+        &.btn-masuk {
+          @include btn-masuk();
+          &:hover {
+            background-color: transparent;
+            color: $textColor;
+            border-radius: 2em;
+            border: 1px solid $primaryColor;
+          }
+        }
+        &:hover {
+          border-radius: 2px;
+          color: black;
+        }
+        &.active {
+          color: black;
+        }
+      }
+    }
+
+  }
+
+  section#konten {
+    margin-top: 5em;
+    .back {
+      cursor: pointer;
+    }
+
+    .box {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      background-color: white;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+
+      .tombol-like {
+        background-color: lighten($color: $primaryColor, $amount: 30);
+        cursor: pointer;
+      }
+      .laporkan {
+        cursor: pointer;
+      }
+    }
+  }
+}
